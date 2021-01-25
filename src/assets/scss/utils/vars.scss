@@ -1,0 +1,29 @@
+//Path
+$path-img: "../img";
+$path-fonts: "../fonts";
+
+//Font
+$font-site: 'Heebo', Arial, sans-serif;
+
+// Site
+$color-text: #707070;
+$color-grey: #e8e8e8;
+$color-blue: #1F98C4;
+$color-pink: #c61782;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1680px
+) !default;
+
+$container-max-widths: (
+  sm: 720px,
+  md: 960px,
+  lg: 1140px,
+  xl: 1640px
+) !default;
+
+$grid-gutter-width: 16px !default;
