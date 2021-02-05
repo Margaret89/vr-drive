@@ -1,0 +1,32 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Training';
+
+block content
+	section.choose-step-wrap.bg-grad-pink.last-elem
+		.container
+			.row
+				.col-12
+					.choose-step-wrap__content
+						h1 תרגול רכב פרטי
+						.choose-step-wrap__subtitle רשימת השיעורים
+
+						.choose-step.choose-step_col.choose-step_white
+							-
+								var list=[
+									{text:'שיעור 1: תמרורים', status:'active'},
+									{text:'שיעור 5:זהירות בדרכים'},
+									{text:'שיעור 2:הכביש ונתיביו'},
+									{text:'שיעור6: הכרת הרכב'},
+									{text:'שיעור 3:פגישה ועקיפה'},
+									{text:'שיעור 7:מבחן מסכם'},
+									{text:'שיעור 4:זכות קדימה'},
+								]
+
+							each item in list
+								.choose-step__item(class=item.status?'active':'')
+									.choose-step__text= item.text
+
+						.choose-step-wrap__img
+							img(src="assets/img/pedestrian-crossing.png", alt="")

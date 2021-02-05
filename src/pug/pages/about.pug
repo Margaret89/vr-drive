@@ -1,0 +1,45 @@
+extends ../layout/main
+
+block variables
+	- var title = 'About';
+
+block content
+	section.page-header.bg-grad-blue
+		.container
+			.row
+				.col-lg-10.offset-lg-1
+					h1 אודות
+
+	section.company.first-elem
+		.container
+			.row
+				.col-lg-11.offset-lg-1
+					.company__content
+						.company__info
+							.company__title VRDRIVE מה זה?
+							.company__text
+								p המרכז המשוכלל/הייחודי בארץ ללימוד תיאוריה והכנה ללימודי נהיגה. הסימולטורים הייחודיים משלבים טכנולוגיית מציאות מדומה ומספקים חוויה היקפית המדמה נהיגה בשטח אמיתי.
+								p תהליך הלמידה מלווה הסברים, קטעי וידאו, שאלוני טריוויה ומשחקים וכמובן חווית נהיגה.
+								p חוויית ה-VR מדמה את התפיסה המרחבית וכיווני ההסתכלות של הנהג ומקנה תחושת הימצאות ברכב.
+
+
+						.company__img
+							img(src="assets/img/company.jpg", alt="")
+
+	section.info-block.info-block_big.bg-grad-green.last-elem
+		.container
+			.row
+				.col-sm-6.col-md-5.offset-md-1
+					.info-block__content
+						.h1 מה כולל המיזם?
+						.info-block__text
+							p - מרכז הלימוד הבנוי מכיתת הדרכה
+							p - מתחם של עשרה סימולטורים ומתחם תרגול מבחנים
+							p - תוכנת לימוד תאוריה וירטואלית דרך משקפי VR הבנויה מ-6 שיעורים, אימון נהיגה ומבחן מסכם 
+							p - אפליקציה להורדה: אפליקציה ללימודי תאוריה באמצעות משקפי VR ביתיים.
+							p - אתר אינטרנט: אתר הכולל הסברים, חומר לימוד ותרגול מבחנים, הדרכות נהיגה נכונה, רענון נהיגה נכונה ונהיגת חורף / קיץ לציי רכב, חברות וארגונים
+							p - שיתוף פעולה: אור ירוק והמועצה לבטיחות בדרכים,  משרד החינוך והפעלה בבתי ספר, עיריות מקומיות, תיכונים, משרד הרישוי, מורים לנהיגה ויבואן רכב
+
+				.col-sm-6.col-md-5
+					.info-block__img
+						img(src="assets/img/road.png", alt="")

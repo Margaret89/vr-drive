@@ -1,0 +1,25 @@
+/*-------------- social -----------------*/
+.social{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+	&__item{
+		text-decoration: none;
+		transition: all 0.2s ease 0s;
+
+		.icon{fill: #fff;}
+	}
+
+	&__item:not(:last-child){margin-right: 15px;}
+	&__item:hover{opacity: 0.8;}
+}
+
+html[dir="rtl"]{
+	.social{
+		&__item:not(:last-child){
+			margin-right: 0;
+			margin-left: 15px;
+		}
+	}
+}

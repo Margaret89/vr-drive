@@ -1,0 +1,143 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Main';
+
+block content
+	section.main-screen.bg-grad-green
+		.container
+			.row
+				.col-md-10.offset-md-1
+					.main-screen__info
+						.main-screen__title לימודי תאוריה ואימון נהיגה במציאות מדומה
+						.main-screen__text שיטת לימוד חווייתית ומהנה, המגבירה משמעותית את סיכויי ההצלחה במבחן התיאוריה!
+
+		.main-screen__img.js-parallax
+
+	section.about.bg-grad-pink
+		.container
+			.row
+				.col-sm-6.col-md-5.offset-md-1
+					.about__content
+						.h1 מי אנחנו?
+
+						.about__text
+							p מרכז לימודי המספק חווית למידה תוך כדי נהיגה על ידי שילוב טכנולוגיית מציאות מדומה (VR)
+							p הסימולטור נועד ללימוד תאוריה, הכנה למבחן, הכנה ללימודי נהיגה, אימון מצב הילוכים והדרכות לנהיגה נכונה.
+							p השיטה החדשה משלבת חווית נהיגה, הסברים, קטעי וידאו ושאלות טריוויה.
+							p חווית ה- VR מאפשרת לדמות את התפיסה המרחבית וכיווני ההסתכלות של הנהג ומקנה תחושת המצאות בתוך הרכב בזמן אמת.
+							p כאשר התלמיד רואה באופן וויזואלי את התמרור או הסיטואציה ויקבל מהמורה הווירטואלי הסבר הוא ילמד ויבין יותר!
+
+						.about__btn
+							a.btn.btn_white(href='#')
+								span.btn__text צרו איתנו קשר
+								+svg('ic-phone','ic-phone', '21', '21')
+
+						.social
+							a(href="#").social__item
+								+svg('ic-facebook','ic-facebook', '42', '42')
+							a(href="#").social__item
+								+svg('ic-youtube','ic-youtube', '54', '38')
+
+
+				.col-sm-6
+					.about__img.js-anim.anim
+						img(src="assets/img/helmet.png", alt="")
+
+			.row
+				.col-md-10.offset-md-1
+					.about__app
+						.app-list
+							a(href="#").app-list__item
+								img(src="assets/img/app-store.png", alt="")
+
+							a(href="#").app-list__item
+								img(src="assets/img/google-play.png", alt="")
+
+						a.btn.btn_white(href='#')
+							span.btn__text < לוח תמרורים להורדה
+
+	section.info-block.bg-grad-blue
+		.container
+			.row
+				.col-sm-6.col-md-4.offset-md-1
+					.info-block__content
+						.h1 למה כדאי ללמוד אצלנו?
+						.info-block__text מחקר שנעשה על למידה במציאות מדומה הראה כי עקב האופן שבו השימוש בהתקן מציאות מדומה מכניסה את המשתמש לחוויה נפרדת, עמוקה ומציאותית מקדמת את הלמידה באופן משמעותי.
+
+				.col-sm-6.col-md-5
+					.info-block__img
+						img(src="assets/img/road-signs.png", alt="")
+
+	section.video.bg-black
+		.container
+			.row
+				.col-sm-10.offset-sm-1
+					.video__content
+						<iframe width="1920" height="938" src="https://www.youtube.com/embed/NZGEDJHhaPw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+	section.info-block.info-block_big.bg-grad-blue
+		.container
+			.row
+				.col-sm-6.col-md-5.offset-md-1
+					.info-block__content
+						.h1 כניסה אל העולם המדומה
+						.info-block__text
+							p בעת הרכבת המשקפיים, המשתמש יראה עצמו יושב בתא הנהג כאשר לידו יושב מורה ללימוד תאוריה. 
+							p תחילה, המורה יתחיל בהסבר קצר על אופי השיעור, הקורס והתנהלותם. 
+							p לאחר ההסבר, המשתמש ייתבקש להתחיל בנסיעה. בעת הגעה לחומר לימודי מסויים, הרכב ייעצר באופן אוטומטי והמורה ייתן הסבר על אותו החומר. בפעם הבאה שהמשתמש ייפגש עם חומר לימודי עליו כבר קיבל הסבר, תפתח שאלת טרוויה עם 4 תשובות אפשריות.
+							p התוכנה בנויה בצורה כזאת שלמשתמש יהיה פשוט ונוח ללמוד את החומר התאורטי
+
+				.col-sm-6.col-md-5
+					.info-block__img.js-anim.anim
+						img(src="assets/img/rishon.png", alt="")
+
+	section.details.bg-grad-green
+		.container
+			.row
+				.col-sm-6
+					.details__img
+						img(src="assets/img/office.jpg", alt="")
+
+				.col-sm-6
+					.details__content
+						.details__info
+							.details__title רוצים לשמוע עוד פרטים?
+
+							a.btn.btn_white(href='#')
+								span.btn__text < כן אשמח לפרטים
+
+	section.branches.bg-grad-pink.last-elem
+		.container
+			.row
+				.col-lg-10.col-xl-7.offset-md-1
+					.h1 הסניפים שלנו
+
+					.branches-list
+						-
+							var list=[
+								{title:'באר שבע', address:'גרנד קניון קומה 2- ', phone:'08-9900077'},
+								{title:'אילת', address:'מדיין 12 מרכז הוכמן', phone:'072-3934831'},
+								{title:'חיפה', address:'ההסתדרות 58', phone:'04-8485055'},
+								{title:'ראשון לציון', address:"קניון ערי החוף, רח' סחרוב 19", phone:'03-7590222'},
+								{title:'עפולה', address:'קניון העמקים', phone:'04-9954070'},
+								{title:'כרמיאל', address:'הכבאי 6, מרכז שווקים', phone:'04-6076666'},
+								{title:'נוף הגליל', address:'גלבוע 1 ', phone:'072-3934461'},
+								{title:'פתח תקווה', address:' ז׳בוטינסקי 10', phone:'03-5026226'},
+								{title:'ירושלים', address:'המלך ג’ורג’ 3', phone:'02-6316370'},
+								{title:'אשקלון', address:'אלי כהן 21, מרכז מסחרי קריית האקדמיה', phone:'072-3934006'},
+							]
+
+						each item in list
+							.branches-list__item
+								.branches-list__content
+									.branches-list__info
+										.branches-list__title= item.title
+										.branches-list__address= item.address
+
+									.branches-list__action
+										.branches-list__wase
+											+svg('ic-waze','ic-waze', '38', '35')
+										.branches-list__phone= item.phone
+											+svg('ic-phone','ic-phone', '25', '25')

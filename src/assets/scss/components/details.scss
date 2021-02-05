@@ -1,0 +1,122 @@
+/*-------------- details -----------------*/
+.details{
+	overflow: hidden;
+
+	&__img{
+		margin-left: -140px;
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	&__info{
+		max-width: 560px;
+		position: relative;
+		padding: 0 120px;
+	}
+
+	&__info::after{
+		content: '';
+		display: inline-block;
+		width: 189px;
+		height: 188px;
+		background: url(../img/lamed.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: -73px;
+		right: -22px;
+	}
+
+	&__title{
+		@include font(normal, normal, rem(41px), 1.2, #fff);
+	}
+
+	.btn{margin-top: 15px;}
+}
+
+html[dir="rtl"]{
+	.details{
+		&__img{
+			margin-left: 0;
+			margin-right: -140px;
+		}
+
+		&__info::after{
+			right: auto;
+			left: -22px;
+		}
+	}
+}
+
+@media (max-width: 1239px) {
+	.details{
+		&__info::after{
+			width: 130px;
+			height: 130px;
+			top: -45px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.details{
+		&__info{padding: 0 50px;}
+
+		&__info::after{
+			width: 100px;
+			height: 100px;
+			top: -25px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.details{
+		&__img{
+			margin-left: -28px;
+			margin-right: -28px;
+		}
+
+		&__title{
+			font-size: rem(32px);
+			line-height: 1.2;
+		}
+
+		&__info{
+			max-width: 100%;
+			padding-left: 0;
+			padding-right: 60px;
+			padding-top: 27px;
+			padding-bottom: 37px;
+		}
+
+		&__info::after{
+			width: 145px;
+			height: 145px;
+			top: -26px;
+		}
+
+		.btn{margin-top: 18px;}
+	}
+
+	html[dir="rtl"]{
+		.details{
+			&__img{
+				margin-left: -28px;
+				margin-right: -28px;
+			}
+
+			&__info{
+				padding-left: 60px;
+				padding-right: 0;
+			}
+		}
+	}
+}

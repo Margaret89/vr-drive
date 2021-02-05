@@ -1,0 +1,146 @@
+/*-------------- mobile-menu -----------------*/
+.mobile-menu{
+	height: 100vh;
+	width: 100vw;
+	background: rgba(43,43,43,0.95);
+	overflow-y: auto;
+	overflow-x: hidden;
+	color: #fff;
+	text-align: center;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	z-index: 1010;
+	transition: top 0.3s ease;
+
+	&.open{top: 0;}
+
+	&__close{
+		position: absolute;
+		top: 16px;
+		right: 25px;
+
+		.ic-hamburger span::after,
+		.ic-hamburger span::before{
+			background: #fff;
+		}
+	}
+
+	&__content-wrap{
+		display: flex;
+		height: 100vh;
+		padding: 50px 25px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	&__content{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100%;
+		width: 100%;
+	}
+
+	.top-menu{
+		display: block;
+		text-align: center;
+
+		&__item{
+			margin: 0;
+			position: relative;
+			opacity: 0;
+			transform: translateY(-50%);
+			transition: all 300ms cubic-bezier(0.8, 0, 0.33, 0.9);
+			transition-delay: 0;
+		}
+
+		&__item:not(:last-child){margin-bottom: 35px;}
+
+		&__link{
+			padding: 3px 40px;
+			position: relative;
+		}
+
+		&__item,
+		&__link{
+			font-size: rem(25px);
+			color: #fff;
+		}
+
+		&__item.active .top-menu__link,
+		&__link:hover{
+			color: #fff;
+		}
+
+		&__item.active .top-menu__link::before,
+		&__link:hover::before{
+			content: '';
+			display: inline-block;
+			width: 100%;
+			height: 5px;
+			background: $color-pink;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	.lang{
+		justify-content: center;
+		margin-top: 104px;
+		position: relative;
+		opacity: 0;
+		transform: translateY(-50%);
+		transition: all 300ms cubic-bezier(0.8, 0, 0.33, 0.9);
+		transition-delay: 0;
+
+		&__icon{
+			width: 30px;
+			height: 30px;
+		}
+
+		&__text{
+			font-size: rem(25px);
+			color: #fff;
+		}
+
+		&__item{padding: 3px 23px;}
+		&__item:not(:last-child){border: 0;}
+
+		&__item:not(:last-child)::after{
+			content: '';
+			display: inline-block;
+			width: 2px;
+			height: 30px;
+			background: #fff;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+
+	&.open .top-menu__item,
+	&.open .lang{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+html[dir="rtl"]{
+	.mobile-menu{
+		&__close{
+			right: auto;
+			left: 25px;
+		}
+
+		.lang{
+			&__item:not(:last-child){border: 0;}
+
+			&__item:not(:last-child)::after{
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+}

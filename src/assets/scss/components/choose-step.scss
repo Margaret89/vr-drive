@@ -1,0 +1,168 @@
+/*-------------- choose-step -----------------*/
+.choose-step-wrap{
+	h1, .h1{
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 65px;
+	}
+
+	&__content{
+		position: relative;
+		padding: 63px 0 170px;
+	}
+
+	&__subtitle{
+		@include font(normal, 300, rem(28px), 1.2, $color-text);
+		text-align: center;
+		margin-top: -58px;
+		margin-bottom: 55px;
+	}
+
+	&.bg-grad-blue &__content{
+		background-image: url(../img/bg-signs.png);
+		background-repeat: no-repeat;
+		background-position: 188px 64px;
+	}
+
+	&__img{
+		text-align: center;
+		margin-bottom: -170px;
+	}
+}
+
+.choose-step{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		min-height: rem(60px);
+		width: 303px;
+		border-radius: 30px;
+		padding: 10px 30px;
+		border: 1px solid $color-text;
+		text-decoration: none;
+		transition: all 0.2s ease 0s;
+		cursor: pointer;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 32px;
+		width: 32px;
+		margin-right: 14px;
+
+		.icon{
+			fill: $color-text;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&__text{
+		@include font(normal, normal, rem(27px), 1.2, $color-text);
+		transition: all 0.2s ease 0s;
+	}
+
+	&__item:not(:last-child){margin-bottom: 32px;}
+
+	&__item:hover,
+	&__item.active{
+		background: $color-text;
+		border-color: $color-text;
+	}
+
+	&__item:hover &__text,
+	&__item.active &__text{
+		color: #fff;
+	}
+
+	&__item:hover .icon,
+	&__item.active .icon{
+		fill: #fff;
+	}
+
+	&_col{
+		flex-direction: row;
+		flex-wrap: wrap;
+		max-width: 676px;
+		margin: 0 auto;
+	}
+
+	&_col &__item{
+		margin-left: 17px;
+		margin-right: 17px;
+	}
+
+	&_col &__text{font-size: rem(23px);}
+
+	&_white &__item{border-color: #fff;}
+	&_white &__text{color: #fff;}
+	&_white .icon{fill: #fff;}
+
+	&_white &__item:hover,
+	&_white &__item.active{
+		background: #fff;
+		border-color: #fff;
+	}
+
+	&_white &__item:hover &__text,
+	&_white &__item.active &__text{
+		color: $color-text;
+	}
+
+	&_white &__item:hover .icon,
+	&_white &__item.active .icon{
+		fill: $color-text;
+	}
+}
+
+html[dir="rtl"]{
+	.choose-step{
+		&__icon{
+			margin-right: 0;
+			margin-left: 14px;
+		}
+	}
+}
+
+@media (max-width: 1679px) {
+	.choose-step-wrap{
+		&.bg-grad-blue &__content{
+			background-position: 0 64px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.choose-step-wrap{
+		h1, .h1{margin-bottom: 35px;}
+
+		&__content{padding-top: 50px;}
+		
+		&.bg-grad-blue &__content{
+			background-size: 55%;
+			background-position: 0 bottom;
+		}
+
+		&__subtitle{
+			margin-top: -36px;
+			margin-bottom: 50px;
+		}
+	}
+
+	.choose-step{
+		&_col{
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&_col .choose-step-wrap__item{
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}

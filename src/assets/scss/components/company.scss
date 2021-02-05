@@ -1,0 +1,122 @@
+/*-------------- company -----------------*/
+.company{
+	overflow: hidden;
+
+	&__content{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__info{
+		width: 38%;
+		padding: 100px 0 40px 40px;
+	}
+
+	&__title{
+		@include font(normal, bold, rem(29px), 1.2, $color-text);
+		margin-bottom: 13px;
+	}
+
+	&__text{
+		@include font(normal, normal, rem(20px), 1.45, $color-text);
+	}
+
+	&__img{
+		width: 58%;
+		margin-right: -150px;
+		text-align: right;
+	}
+}
+
+html[dir="rtl"]{
+	.company{
+		&__img{
+			margin-left: -150px;
+			margin-right: 0;
+			text-align: left;
+		}
+	}
+}
+
+@media (max-width: 1679px) {
+	.company{
+		&__info{
+			width: 42%;
+			padding-top: 40px;
+		}
+
+		&__img{margin-right: -250px;}
+	}
+
+	html[dir="rtl"]{
+		.company{
+			&__img{
+				margin-left: -250px;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 1239px) {
+	.company{
+		&__img,
+		&__info{
+			width: 50%;
+		}
+
+		&__img{margin: 0;}
+		&__info{padding: 20px 30px 20px 0;}
+	}
+
+	html[dir="rtl"]{
+		.company{
+			&__img{margin: 0;}
+			&__info{padding: 20px 0 20px 30px;}
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.company{
+		&__content{display: block;}
+
+		&__img,
+		&__info{
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.company{
+		&__info{padding: 22px 0 40px;}
+		&__title{margin-bottom: 6px;}
+
+		&__text{
+			font-size: rem(18px);
+			line-height: 1.5;
+		}
+
+		&__img{
+			margin-left: -28px;
+			margin-right: -28px;
+		}
+
+		&__img,
+		&__info{
+			width: auto;
+		}
+	}
+
+	html[dir="rtl"]{
+		.company{
+			&__info{padding: 22px 0 40px;}
+
+			&__img{
+				margin-left: -28px;
+				margin-right: -28px;
+			}
+		}
+	}
+}

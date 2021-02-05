@@ -1,2 +1,54 @@
 header.header
-	.st-width header
+	.container
+		.row
+			.col-12
+				.header__content
+					a(href="#").header__callback.d-md-none
+						+svg('ic-phone','ic-phone', '21', '21')
+					
+					.header__info
+						.header__logo
+							a(href="#")
+								img(src="assets/img/logo.svg", alt="")
+
+						ul.top-menu.js-add-mm(data-order="1")
+							-
+								var list=[
+									'עמוד הבית',
+									'שאלון תאוריה',
+									'גלריה',
+									'אודות',
+									'מן העיתונות',
+									'זכיינות',
+									'צור קשר',
+									]
+							each item, index in list
+								li.top-menu__item.js-top-menu-item(class=index==0?'active':'')
+									a(href="#").top-menu__link= item
+
+					.lang.js-lang.js-add-mm(data-order="2")
+						-
+							var list=[
+								{icon:'flag-ar.svg', text:'Ar'},
+								{icon:'flag-ru.svg', text:'Ru'},
+								{icon:'flag-en.svg', text:'En'},
+								{icon:'flag-he.svg', text:'He', status: 'active'}, 
+							]
+
+						each item in list
+							.lang__item(class=item.status?'active':'')
+								.lang__icon
+									img(src="assets/img/"+item.icon, alt="")
+
+								.lang__text= item.text
+
+					.ic-hamburger.js-open-menu.d-lg-none
+						span
+
+	.mobile-menu.js-mobile-menu.d-md-none
+		.mobile-menu__close
+			span.ic-hamburger.active.js-close-menu
+				span
+
+		.mobile-menu__content-wrap.js-mobile-menu-content-wrap
+			.mobile-menu__content.js-mobile-menu-content

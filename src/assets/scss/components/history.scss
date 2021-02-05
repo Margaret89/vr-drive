@@ -1,0 +1,67 @@
+/*-------------- history -----------------*/
+.history{
+	padding: 115px 0 50px;
+
+	&__text{
+		@include font(normal, normal, rem(20px), 1.45, #000);
+		margin-bottom: 50px;
+	}
+
+	&__img{margin-left: -22%;}
+}
+
+.history-office{
+	margin-bottom: 34px;
+
+	&__text,
+	&__title{
+		font-size: rem(20px);
+		line-height: 1.45;
+	}
+
+	&__title{font-weight: bold;}
+}
+
+html[dir="rtl"]{
+	.history{
+		&__img{
+			margin-left: 0;
+			margin-right: -22%;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.history{
+		&__img{margin-left: 0;}
+	}
+
+	html[dir="rtl"]{
+		.history{
+			&__img{
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.history{
+		padding-top: 64px;
+
+		&__text{
+			font-size: rem(18px);
+			line-height: 1.5;
+			margin-bottom: 42px;
+		}
+	}
+
+	.history-office{
+		&__text,
+		&__title{
+			font-size: rem(18px);
+			line-height: 1.5;
+		}
+	}
+}

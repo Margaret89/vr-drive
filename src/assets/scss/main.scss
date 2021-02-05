@@ -1,15 +1,16 @@
 // fancybox
-// @import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
 
 @import "utils/vars";
 
-// bootstrap
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/utilities/flex";
-@import "~bootstrap/scss/utilities/display";
-@import "~bootstrap/scss/grid";
+@import "~bootstrap-v4-rtl/scss/functions";
+@import "~bootstrap-v4-rtl/scss/variables";
+@import "~bootstrap-v4-rtl/scss/mixins";
+@import "~bootstrap-v4-rtl/scss/utilities/flex";
+@import "~bootstrap-v4-rtl/scss/utilities/display";
+@import "~bootstrap-v4-rtl/scss/grid";
+@import "~bootstrap-v4-rtl/scss/rtl";
+
 // @import "~bootstrap/scss/modal";
 
 @import "~sass-rem/_rem.scss";

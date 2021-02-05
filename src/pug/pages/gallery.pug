@@ -1,0 +1,73 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Gallery';
+
+block content
+	section.page-header.bg-grad-green
+		.container
+			.row
+				.col-lg-10.offset-lg-1
+					h1 גלריה
+
+	section.gallery-wrap
+		.container
+			.row
+				.col-lg-10.offset-lg-1
+					.filter
+						.filter__prev.js-filter-prev
+							+svg('ic-arrow-left','ic-arrow-left', '9', '16')
+
+						.filter__content.js-filter-content
+							.filter__list.js-filter-list
+								-
+									var list=[
+										{text:'באר שבע', status:'active'},
+										{text:'חיפה'},
+										{text:'עפולה'},
+										{text:'נוף הגליל'},
+										{text:'ירושלים'},
+										{text:'אילת'},
+										{text:'ראשון לציון'},
+										{text:'כרמיאל'},
+										{text:'פתח תקווה'},
+										{text:'אשקלון'},
+										{text:'עפולה'},
+										{text:'נוף הגליל'},
+										{text:'ירושלים'},
+										{text:'אילת'},
+										{text:'ראשון לציון'},
+									]
+
+								each item in list
+									.filter__item.js-filter-item(class=item.status?'active':'')
+										a(href="#").filter__link= item.text
+
+							.filter__next.js-filter-next
+								+svg('ic-arrow-right','ic-arrow-right', '9', '16')
+
+					.gallery-list
+						-
+							var list=[
+								'gallery1.jpg',
+								'gallery2.jpg',
+								'gallery3.jpg',
+								'gallery4.jpg',
+								'gallery5.jpg',
+								'gallery6.jpg',
+								'gallery7.jpg',
+								'gallery1.jpg',
+								'gallery2.jpg',
+								'gallery3.jpg',
+								'gallery4.jpg',
+								'gallery5.jpg',
+								'gallery6.jpg',
+								'gallery7.jpg',
+								'gallery1.jpg',
+								'gallery2.jpg',
+							]
+
+						each item in list
+							a(href="/assets/img/"+item, data-fancybox='images').gallery-list__item
+								img(src="/assets/img/"+item, alt="")
+

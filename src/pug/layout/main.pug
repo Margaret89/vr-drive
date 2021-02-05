@@ -2,14 +2,15 @@ include ../utils/mixins
 block variables
 
 doctype html
-html(lang='ru')
+html(lang='ru', dir="rtl")
 	head
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		title #{title}
 
-	body
+	body.js-body
 		.wrapper
+			.shadow-site.js-shadow
 			include ./header
 			main
 				block header-ban

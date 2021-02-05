@@ -1,0 +1,42 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Contact';
+
+block content
+	section.branches.branches_img.bg-grad-pink.last-elem
+		.container
+			.row
+				.col-12
+					.branches__content
+						.row
+							.col-lg-10.col-xl-7.offset-md-1
+								.h1 צור קשר
+
+								.branches-list
+									-
+										var list=[
+											{title:'באר שבע', address:'גרנד קניון קומה 2- ', phone:'08-9900077'},
+											{title:'אילת', address:'מדיין 12 מרכז הוכמן', phone:'072-3934831'},
+											{title:'חיפה', address:'ההסתדרות 58', phone:'04-8485055'},
+											{title:'ראשון לציון', address:"קניון ערי החוף, רח' סחרוב 19", phone:'03-7590222'},
+											{title:'עפולה', address:'קניון העמקים', phone:'04-9954070'},
+											{title:'כרמיאל', address:'הכבאי 6, מרכז שווקים', phone:'04-6076666'},
+											{title:'נוף הגליל', address:'גלבוע 1 ', phone:'072-3934461'},
+											{title:'פתח תקווה', address:' ז׳בוטינסקי 10', phone:'03-5026226'},
+											{title:'ירושלים', address:'המלך ג’ורג’ 3', phone:'02-6316370'},
+											{title:'אשקלון', address:'אלי כהן 21, מרכז מסחרי קריית האקדמיה', phone:'072-3934006'},
+										]
+
+									each item in list
+										.branches-list__item
+											.branches-list__content
+												.branches-list__info
+													.branches-list__title= item.title
+													.branches-list__address= item.address
+
+												.branches-list__action
+													.branches-list__wase
+														+svg('ic-waze','ic-waze', '38', '35')
+													.branches-list__phone= item.phone
+														+svg('ic-phone','ic-phone', '25', '25')

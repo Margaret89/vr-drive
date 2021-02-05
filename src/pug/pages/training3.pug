@@ -1,0 +1,80 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Training';
+
+block content
+	section.quiz.last-elem
+		.container
+			.row
+				.col-12
+					.quiz__content
+						h1 תרגול רכב פרטי
+						.quiz__subtitle שיעור 1
+						
+						.quiz__info
+							.timer.js-timer(data-time='120')
+								.timer__text.js-timer-text 00:00
+								svg(width='124' height='124' xmlns='http://www.w3.org/2000/svg')
+									defs
+										lineargradient#linear-gradient(x1='-0.229' y1='-0.087' x2='1.401' y2='1.585' gradientUnits='objectBoundingBox')
+											stop(offset='0' stop-color='#e90028')
+											stop(offset='0.242' stop-color='#dd0745')
+											stop(offset='0.558' stop-color='#d01066')
+											stop(offset='0.822' stop-color='#c8157a')
+											stop(offset='1' stop-color='#c61782')
+									circle#circle.timer__circle.js-timer-circle(r='60' cy='62' cx='62' stroke-width='4' stroke='url(#linear-gradient)' fill='none' )
+
+							form.quiz-form
+								.quiz-form__title שאלה מספר 1:
+								.quiz-form__text איזה תמרור יוצב או יסומן אחרי תמרור 144?
+								
+								.quiz-form__content
+									-
+										var list=[
+											{text:'א. 806'},
+											{text:'ב. 821'},
+											{text:'ג. 101'},
+											{text:'ד. 513', status:'active'},
+										]
+									
+									each item, index in list
+										.quiz-check
+											if(item.status)
+												input(type='checkbox', checked='checked', id='checkbox'+index)
+											else
+												input(type='checkbox', id='checkbox'+index)
+											label.quiz-check__label(for='checkbox'+index)= item.text
+
+								.quiz-form__btn
+									button.btn.btn_grey.btn_small(type="submit")
+										span.btn__text < לשאלה הבאה
+
+							.quiz__img
+								img(src="assets/img/quiz.png", alt="")
+
+							.filter
+								.filter__prev.js-filter-prev
+									+svg('ic-arrow-left','ic-arrow-left', '9', '16')
+
+								.filter__content.js-filter-content
+									.filter__list.js-filter-list
+										-
+											var list=[
+												{text:'שיעור 1', status:'active'},
+												{text:'שיעור 2'},
+												{text:'שיעור 3'},
+												{text:'שיעור 3'},
+											]
+
+										each item in list
+											.filter__item.js-filter-item(class=item.status?'active':'')
+												a(href="#").filter__link= item.text
+
+									.filter__next.js-filter-next
+										+svg('ic-arrow-right','ic-arrow-right', '9', '16')
+
+							.quiz__btn
+								a.btn.btn_big(href='#')
+									span.btn__text < לרשימת השיעורים
+					

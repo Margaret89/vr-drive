@@ -1,0 +1,251 @@
+/*-------------- quiz -----------------*/
+.quiz{
+	background: #d8d8d8;
+	text-align: center;
+
+	h1, .h1{
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	&__subtitle{
+		@include font(normal, 300, rem(28px), 1.2, $color-text);
+		margin-bottom: 33px;
+	}
+
+	&__content{
+		padding: 65px 0 165px;
+		background: url(../img/road-signs.png) no-repeat right bottom;
+		background-size: 510px;
+	}
+
+	&__info{
+		width: 800px;
+		max-width: 100%;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	&__img{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #fff;
+		padding: 30px;
+		border-radius: 30px;
+		box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.1);
+		margin-top: 25px;
+
+		img{max-height: 400px;}
+	}
+
+	.filter{
+		margin-top: 35px;
+
+		&__item,
+		&__link{
+			font-size: rem(21px);
+		}
+
+		&__item{padding: 0 15px;}
+	}
+
+	&__btn{margin-top: 50px;}
+
+	.timer{
+		position: absolute;
+		top: 0;
+		right: calc(100% + 25px);
+	}
+}
+
+.quiz-form{
+	background: #fff;
+	padding: 42px 20px 20px 104px;
+	border-radius: 30px;
+	box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.1);
+	text-align: left;
+
+	&__title{
+		@include font(normal, bold, rem(23px), 1.2, $color-text);
+	}
+
+	&__text{
+		@include font(normal, normal, rem(21px), 1.2, $color-text);
+	}
+
+	&__content{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 16px -10px;
+	}
+
+	&__btn{
+		text-align: right;
+		margin-top: 35px;
+	}
+
+	.btn_small,
+	input[type="submit"].btn_small,
+	button.btn_small{
+		min-width: 185px;
+		font-size: rem(18px);
+	}
+}
+
+.quiz-check{
+	width: 273px;
+	margin: 10px;
+
+	&__label{
+		display: inline-flex;
+		align-items: center;
+		min-height: rem(60px);
+		width: 100%;
+		@include font(normal, normal, rem(23px), 1.2, $color-text);
+		border: 1px solid $color-text;
+		border-radius: rem(30px);
+		padding: 14px 25px;
+		transition: all 0.2s ease 0s;
+		cursor: pointer;
+	}
+
+	input[type=checkbox]{display: none;}
+
+	&__label:hover,
+	input[type=checkbox]:checked + &__label{
+		background: $color-blue;
+		border-color: $color-blue;
+		color: #fff;
+	}
+
+	&.success &__label{
+		background: #4ec765;
+		border-color: #4ec765;
+		color: #fff;
+		cursor: auto;
+	}
+
+	&.error &__label{
+		background: #e40437;
+		border-color: #e40437;
+		color: #fff;
+		cursor: auto;
+	}
+}
+
+.quiz-alert{
+	margin-bottom: 20px;
+
+	&__title{
+		@include font(normal, bold, rem(35px), 1.1, #4ec765);
+	}
+
+	&__text{
+		@include font(normal, 300, rem(32px), 1.1, #4ec765);
+		margin-top: 5px;
+	}
+
+	&_red &__title,
+	&_red &__text{
+		color: #e40437;
+	}
+}
+
+html[dir="rtl"]{
+	.quiz{
+		&__content{background-position: left bottom;}
+
+		.timer{
+			right: auto;
+			left: calc(100% + 25px);
+		}
+	}
+
+	.quiz-form{
+		text-align: right;
+		padding-right: 104px;
+		padding-left: 20px;
+
+		&__btn{text-align: left;}
+	}
+}
+
+@media (max-width: 1679px) {
+	.quiz{
+		&__content{padding-bottom: 200px;}
+	}
+}
+
+@media (max-width: 1239px) {
+	.quiz{
+		&__info{width: 630px;}
+	}
+
+	.quiz-form{padding-left: 40px;}
+
+	html[dir="rtl"]{
+		.quiz-form{
+			padding-right: 40px;
+			padding-left: 20px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.quiz{
+		.timer{
+			position: relative;
+			top: auto;
+			left: auto;
+			margin-bottom: 30px;
+		}
+
+		&__content{
+			background-size: 300px;
+			padding-bottom: 250px;
+			background-position: bottom center;
+		}
+	}
+
+	html[dir="rtl"]{
+		.quiz{
+			.timer{
+				left: auto;
+				right: auto;
+			}
+
+			&__content{background-position: bottom center;}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.quiz{
+		.timer{margin-bottom: 20px;}
+		h1, .h1{margin-bottom: 0;}
+		&__content{padding-top: 37px;}
+		.filter{margin-top: 50px;}
+
+		&__img{
+			margin-top: 20px;
+			padding: 20px;
+		}
+	}
+
+	.quiz-form{
+		padding: 20px;
+
+		&__title{margin-bottom: 10px;}
+		&__content{margin: 18px 0;}
+	}
+
+	.quiz-check{
+		width: 100%;
+		margin: 6px 0;
+	}
+
+	html[dir="rtl"]{
+		.quiz-form{padding: 20px;}
+	}
+}

@@ -1,0 +1,61 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Video';
+
+block content
+	section.page-header.bg-grad-green
+		.container
+			.row
+				.col-lg-10.offset-lg-1
+					h1 מן העיתונות
+
+	section.press-wrap
+		.container
+			.row
+				.col-lg-10.offset-lg-1
+					.filter
+						.filter__prev.js-filter-prev
+							+svg('ic-arrow-left','ic-arrow-left', '9', '16')
+
+						.filter__content.js-filter-content
+							.filter__list.js-filter-list
+								-
+									var list=[
+										{text:'טלוויזיה', status:'active'},
+										{text:'כתבות'},
+									]
+
+								each item in list
+									.filter__item.js-filter-item(class=item.status?'active':'')
+										a(href="#").filter__link= item.text
+
+							.filter__next.js-filter-next
+								+svg('ic-arrow-right','ic-arrow-right', '9', '16')
+
+					.press
+						-
+							var list=[
+								{icon:'video-logo1.png', title:'שש עם עודד בן עמי', img:'prevew-video1.jpg', link:'https://youtu.be/AuE_crOlpEA'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo1.png', title:'שש עם עודד בן עמי', img:'prevew-video1.jpg', link:'https://youtu.be/AuE_crOlpEA'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo1.png', title:'שש עם עודד בן עמי', img:'prevew-video1.jpg', link:'https://youtu.be/AuE_crOlpEA'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+								{icon:'video-logo2.png', title:'העולם הבוקר עם אברי גלעד', link:'https://youtu.be/DhE9J_XbeK4'},
+							]
+
+						each item in list
+							.press__item
+								.press__top
+									.press__icon(style="background-image: url(assets/img/"+item.icon+")")
+									.press__title= item.title
+
+								a(data-fancybox='', href=item.link, style=item.img?'background-image: url(assets/img/'+item.img+')':'').press__video
+									span.press__play
+										+svg('ic-youtube','ic-youtube', '54', '38')

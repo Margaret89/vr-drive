@@ -1,0 +1,122 @@
+/*-------------- filter -----------------*/
+.filter{
+	font-size: 0;
+	position: relative;
+	margin-bottom: 7px;
+
+	&__content{
+		overflow: hidden;
+	}
+	
+	&__list{
+		white-space: nowrap;
+		position: relative;
+		left: 0;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 32px;
+		position: relative;
+	}
+
+	&__item:first-child{padding: 0 33px 0 15px;}
+
+	&__item,
+	&__link{
+		@include font(normal, normal, rem(23px), 1.2, $color-text);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	&__link{
+		display: inline-block;
+		padding: 10px 0;
+		position: relative;
+	}
+
+	&__link:hover::after,
+	&__item.active &__link::after{
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 5px;
+		background: $color-pink;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__prev,
+	&__next{
+		display: none;
+		position: absolute;
+		@include top-center;
+		cursor: pointer;
+
+		.icon{
+			fill: $color-text;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&__prev{left: -17px;}
+	&__next{right: -17px;}
+
+	&__prev.active,
+	&__next.active{
+		display: inline-block;
+	}
+
+	&__prev:hover .icon,
+	&__next:hover .icon{
+		fill: $color-pink;
+	}
+
+	& + .video-list{margin-top: 12px;}
+}
+
+html[dir="rtl"]{
+	.filter{
+		&__list{
+			right: 0;
+			left: auto;
+		}
+
+		&__item:first-child{padding: 0 15px 0 32px;}
+
+		&__prev,
+		&__next{
+			.icon{transform: rotate(180deg);}
+		}
+
+		&__prev{
+			left: auto;
+			right: -17px;
+		}
+
+		&__next{
+			right: auto;
+			left: -17px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.filter{
+		&__item{padding: 0 16px;}
+		&__item:first-child{padding: 0 16px 0 0;}
+	}
+
+	html[dir="rtl"]{
+		.filter{
+			&__item:first-child{padding: 0 0 0 16px;}
+		}
+	}
+}
+
+@media (max-width: 479px) {
+	.filter{margin-bottom: 17px;}
+}

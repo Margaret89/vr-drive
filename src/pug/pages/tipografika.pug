@@ -1,67 +1,228 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Типографика';
-	- var h1 = 'Типографика';
+	- var title = 'Typography';
+	- var h1 = 'Typography';
 
 
 block breadcrumb
 	-
 		var breadcrumbs=[
-			{href:'/',name:'Главная'},
-			{href:'#',name:'Типографика'},
+			{href:'/',name:'Main'},
+			{href:'#',name:'Typography'},
 		];
 
 	+breadcrumbs(breadcrumbs)
 
 block content
-	section.st-width
-		p
-			a(href='#') Это стандартная ссылка
+	section.container
+		.row
+			.col-12
+				p
+					a(href='#') Link
 
-		p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.</p>
+				p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+				p Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
 
-		p По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</p>
+				br
+				br
+				.h2 Additional classes for text
+				p
+					span.code text-left
+					|  text align left
+				p
+					span.code text-center
+					|  text align center
+				p
+					span.code text-right
+					|  text align right
+				p
+					span.code text-justify
+					|  text align across the width
+				p
+					span.code text-uppercase
+					|  text uppercase
+				p
+					span.code text-bold
+					|  text bold
 
-		br
-		br
-		div.h2 Доп. классы для текста
-		p <span class="code">text-left</span> Выравнивание текста по левому краю
-		p <span class="code">text-center</span> Выравнивание текста по центру
-		p <span class="code">text-right</span> Выравнивание текста по правому краю
-		p <span class="code">text-justify</span> Выравнивание текста по ширине
-		p <span class="code">text-uppercase</span> Все символы текста становятся прописными (верхний регистр)
-		p <span class="code">text-bold</span> Жирный текст
+				br
+				br
+				.h2 Headers
+				h1 Header - h1
+				h2 Header - h2
+				h3 Header - h3
+				h4 Header - h4
+				h5 Header - h5
+				h6 Header - h6
+				br
+				
+				p.h1 The class is called h1
+				p.h2 The class is called h2
+				p.h3 The class is called h3
+				p.h4 The class is called h4
+				p.h5 The class is called h5
+				p.h6 The class is called h6
 
-		br
-		br
-		div.h2 Заголовки
-		h1 Заголовок - h1
-		h2 Заголовок - h2
-		h3 Заголовок - h3
-		h4 Заголовок - h4
-		h5 Заголовок - h5
-		h6 Заголовок - h6
+				br
+				br
+				br
+				div.h2 Lists
+				ul
+					li Unnumbered list
+					li Unnumbered list
+					li Unnumbered list
+					li Unnumbered list
 
-		br
-		p.h1 Это класс с названием h1
-		p.h2 Это класс с названием h2
-		p.h3 Это класс с названием h3
-		p.h4 Это класс с названием h4
-		p.h5 Это класс с названием h5
-		p.h6 Это класс с названием h6
+				br
+				ol
+					li Numbered list
+					li Numbered list
+					li Numbered list
+					li Numbered list
 
-		br
-		br
-		br
-		div.h2 Кнопки
-		a.btn(href='#') Кнопка
+				br
+				br
+				br
+				div.h2 Buttons
+				a.btn(href='#')
+					span.btn__text Button
 
-		br
-		br
-		div.h2 Иконки
-		.type-icon
-			.type-icon__item
-				.type-icon__img
-					+svg('ic-twitter','ic-twitter', '17', '14')
-				.type-icon__name ic-twitter
+				br
+				br
+				a.btn.btn_grey(href='#')
+					span.btn__text Button
+				
+				br
+				br
+				a.btn.btn_small(href='#')
+					span.btn__text Button
+				
+				br
+				br
+				a.btn.btn_big(href='#')
+					span.btn__text Button
+				
+				br
+				br
+				div.bg-grad-pink(style="padding: 20px;")
+					a.btn.btn_white(href='#')
+						span.btn__text Button
+
+					br
+					br
+					a.btn.btn_white(href='#')
+						+svg('ic-phone','ic-phone', '21', '21')
+						span.btn__text Button
+
+				br
+				br
+				div.h2 Backgrounds
+				div.bg-grad-green(style="padding: 40px 20px;")
+					p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+
+				br
+				div.bg-grad-pink(style="padding: 40px 20px;")
+					p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+
+				br
+				div.bg-grad-blue(style="padding: 40px 20px;")
+					p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+
+				br
+				div.bg-black(style="padding: 40px 20px;")
+					p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+
+				br
+				br
+				div.h2 Icons
+				.type-icon
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-phone','ic-phone', '21', '21')
+						.type-icon__name ic-phone
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-youtube','ic-youtube', '54', '38')
+						.type-icon__name ic-youtube
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-facebook','ic-facebook', '42', '42')
+						.type-icon__name ic-facebook
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-waze','ic-waze', '38', '35')
+						.type-icon__name ic-smile
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-left','ic-arrow-left', '9', '16')
+						.type-icon__name ic-arrow-left
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-right','ic-arrow-right', '9', '16')
+						.type-icon__name ic-arrow-right
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-group','ic-group', '36', '36')
+						.type-icon__name ic-group
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-setting','ic-setting', '36', '36')
+						.type-icon__name ic-setting
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-finance','ic-finance', '36', '36')
+						.type-icon__name ic-finance
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-learn','ic-learn', '32', '32')
+						.type-icon__name ic-learn
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-signature','ic-signature', '32', '34')
+						.type-icon__name ic-signature
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-find','ic-find', '36', '35')
+						.type-icon__name ic-find
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-address','ic-address', '26', '36')
+						.type-icon__name ic-address
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-cut','ic-cut', '30', '30')
+						.type-icon__name ic-cut
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-car','ic-car', '32', '23')
+						.type-icon__name ic-car
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-truck','ic-truck', '26', '32')
+						.type-icon__name ic-truck
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-bus','ic-bus', '32', '29')
+						.type-icon__name ic-bus
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-bicycle','ic-bicycle', '34', '20')
+						.type-icon__name ic-bicycle

@@ -1,0 +1,71 @@
+/*-------------- about -----------------*/
+.about{
+	padding: 155px 0 98px;
+	overflow: hidden;
+
+	h1,.h1{margin-bottom: 14px;}
+
+	&__text{
+		@include font(normal, normal, rem(20px), 1.45, #fff);
+	}
+
+	&__img{text-align: center;}
+
+	&__img.anim{
+		transform: translateX(100vw);
+		transition: all 0.3s ease 0s;
+	}
+
+	&__img.animated{transform: none;}
+
+	&__btn{margin-top: 45px;}
+
+	.social{margin-top: 65px;}
+
+	&__app{
+		margin-top: 48px;
+		padding-top: 40px;
+		border-top: 1px solid #fff;
+		text-align: center;
+
+		.btn{margin-top: 30px;}
+	}
+}
+
+html[dir="rtl"]{
+	.about{
+		&__img.anim{transform: translateX(-100vw);}
+		&__img.animated{transform: none;}
+	}
+}
+
+@media (max-width: 767px) {
+	.about{
+		padding-top: 46px;
+		padding-bottom: 62px;
+
+		&__text{
+			font-size: rem(18px);
+			line-height: 1.5;
+		}
+
+		&__btn{
+			margin-top: 40px;
+			text-align: center;
+		}
+
+		&__img{margin-top: 30px;}
+
+		&__app{
+			margin-top: 22px;
+			padding-top: 40px;
+
+			.btn{margin-top: 40px;}
+		}
+
+		.social{
+			justify-content: center;
+			margin-top: 30px;
+		}
+	}
+}
